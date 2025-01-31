@@ -1,0 +1,13 @@
+name: "All branches commit workflow"
+
+on:
+  push:
+
+jobs:
+    commit_when_anything_is_pushed_to_repository:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "commit message"
+              run: |
+                dat=$(date)
+                echo "committed and pushed the code to repository on $dat"
