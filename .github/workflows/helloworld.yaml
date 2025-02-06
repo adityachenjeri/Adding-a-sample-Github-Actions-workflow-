@@ -1,6 +1,6 @@
-name: "Hello world workflow" #This is the name of the github action
+name: "Hello world workflow" #This is the name of the workflow/pipeline
 
-#On key is used to create events. If we push something to repository or pull, these are events
+#On key is used to create events. If we push/pull something to repository or pull, these are events
 #Now we will attach this particular workflow to the events, 
 #so if something is pushed to master branch or to production, the workflow will run
 #On key will register events
@@ -17,5 +17,5 @@ jobs:
       - name: " Print Hello World" #name of the step
         run: echo "hello world" #here we use run keyword to execute the step
 
-      - name: "Print surrent date" #name of the 2nd step, it will print the current date
+      - name: "Print current date" #name of the 2nd step, it will print the current date
         run: date

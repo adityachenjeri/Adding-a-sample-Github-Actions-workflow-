@@ -23,3 +23,11 @@ jobs:
         steps: #Steps to execute in the job
             - name: "Running on pull request"
               run: echo "Running on pull request"
+
+
+    on-workflow-dispatch: #3rd job, workflow dispatch is a trigger by which we can run workflow without a code push or pull request
+         if: github.event_name == 'workflow_dispatch'
+         runs-on: ubuntu-latest
+         steps: #steps in this job
+            - name: "Running on workflow dispatch"
+              run: echo "Running on workflow dispatch"
