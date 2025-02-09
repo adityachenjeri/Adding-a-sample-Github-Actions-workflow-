@@ -33,14 +33,14 @@ jobs:
 
     on_pull_request_opened:
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
-        runs-on: ubuntu_latest
+        runs-on: ubuntu-latest
         steps:
             - name: "Runs on pull request opened"
               run: echo "Running on pull request opened"
 
     on_pull_request_closed: #it will work when we close the PR on master branch itself, if we push through another branch we have to merge the pull request
         if: github.event_name == 'pull_request' && github.event.action == 'closed'
-        runs-on: ubuntu_latest
+        runs-on: ubuntu-latest
         steps: 
             - name: "Runs on pull request comes closed"
               run: echo "Running on pull request closed"
