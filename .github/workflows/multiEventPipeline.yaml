@@ -5,6 +5,9 @@ on:
     branches:
          - master
          - test
+
+  schedule:
+         - cron: "0 10 * * 2,4" #cron is used to create the schedule for the pipeline to run on a specific day or the time
   pull_request:
     branches:
         - master
@@ -49,3 +52,11 @@ jobs:
          steps: #steps in this job
             - name: "Running on workflow dispatch"
               run: echo "Running on workflow dispatch"
+
+
+    on-schedule:
+         if: github.event_name == 'schedule'
+         runs-on: ubuntu-latest
+         steps:
+            - name: "Running the pipeline on Tuesday and Thusday"
+              run: echo "Running the pipeline/workflow on tuesday, thusday at 10:00"
